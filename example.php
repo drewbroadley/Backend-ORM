@@ -42,12 +42,35 @@ $user->name = "Updated Test User";
 $user->save();
 
 
+
+
+print $user->age;
+
+
+// OTHER FEATURES
+
+// Conditions (can be multiple
+$user = new Backend_ORM('users');
+$user->cond("name", "Test User");
+// or
+$user->cond("user_id > 10");
+
+// Ordering
+$user = new Backend_ORM('users');
+$user->order("name", "asc");
+
+// Limit
+$user = new Backend_ORM('users');
+$user->limit(10);
+
 // Join Table
 $user = new Backend_ORM('users');
 $user->join('user_details'); // joins by default on PK
 $user->get(1);
 
-print $user->age;
-
+// Cache query
+$user = new Backend_ORM('users');
+/* Insert complex query param's */
+$user->get(null, 360); // Cache for 5 minutes
 
 ?>
