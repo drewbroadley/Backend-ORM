@@ -7,6 +7,7 @@ The PHP library is an ORM based class for PHP and MySQL. The difference between 
 
 What to expect:
 
+* Automagically creates the Models/Schema foryour database
 * Retreiving data is much faster
 * Inserting and updating data is much much faster
 * Handles the everyday MySQL querying
