@@ -43,10 +43,6 @@ $user->save();
 
 
 
-
-print $user->age;
-
-
 // OTHER FEATURES
 
 // Conditions (can be multiple
@@ -67,6 +63,8 @@ $user->limit(10);
 $user = new Backend_ORM('users');
 $user->join('user_details'); // joins by default on PK
 $user->get(1);
+print $user->age;
+
 
 // Cache query
 $user = new Backend_ORM('users');
