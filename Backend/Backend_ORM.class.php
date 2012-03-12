@@ -354,7 +354,6 @@ class Backend_ORM extends Backend {
 	$sql .= " WHERE ";
 
 	if (count($this->cond) > 0) {
-	    $sql .= "\nWHERE ";
 
 	    foreach ($this->cond as $cond) {
 		if (is_string($cond) && preg_match("/^\{.*\}$/", $cond)) {
@@ -372,7 +371,7 @@ class Backend_ORM extends Backend {
 	    $sql .= $where_field_name . " = '" . addslashes($where_field_value) . "' ";
 	}
 
-	print "SQL: $sql<br/>";
+	//print "SQL: $sql<br/>";
 
 	$this->query = self::query($sql);
 
@@ -405,8 +404,6 @@ class Backend_ORM extends Backend {
 	$sql .= " WHERE ";
 
 	if (count($this->cond) > 0) {
-	    $sql .= "\nWHERE ";
-
 	    foreach ($this->cond as $cond) {
 		if (is_string($cond) && preg_match("/^\{.*\}$/", $cond)) {
 		    $conds[] = preg_replace("/^\{(.*)\}$/", "$1", $cond);
